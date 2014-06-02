@@ -1,0 +1,4 @@
+# http://www.rubyinside.com/how-to-create-a-ruby-extension-in-c-in-43-seconds-167.html
+
+gem install hoe
+gem install RubyInline
