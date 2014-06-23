@@ -1,6 +1,12 @@
-//test.cpp
-#define DLLEXPORT extern "C" __declspec(dllexport)
+#include "average.h"
 
-DLLEXPORT int sum(int a, int b) {
-    return a + b;
+double Averager::average(std::vector<int> vect)
+{
+  if (vect.size() == 0)
+    return 0.0;
+
+  double acc = 0;
+  for (int x : vect)
+    acc += x;
+  return acc / vect.size();
 }

@@ -8,16 +8,14 @@ VALUE MyTest = Qnil;
 void Init_mytest();
 
 // Prototype for our method 'test1' - methods are prefixed by 'method_' here
-VALUE method_test1(VALUE self);
+VALUE method_sum(VALUE self, VALUE x, VALUE y);
 
 // The initialization method for this module
 void Init_mytest() {
 	MyTest = rb_define_module("MyTest");
-	rb_define_method(MyTest, "test1", method_test1, 0);	
+	rb_define_method(MyTest, "sum",   method_sum,   2);
 }
 
-// Our 'test1' method.. it simply returns a value of '10' for now.
-VALUE method_test1(VALUE self) {
-	int x = 10;
-	return INT2NUM(x);
+VALUE method_sum(VALUE self, VALUE x, VALUE y) {
+  return INT2NUM(NUM2INT(x) + NUM2INT(y));
 }

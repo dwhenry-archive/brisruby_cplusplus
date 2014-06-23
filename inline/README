@@ -2,3 +2,7 @@
 
 gem install hoe
 gem install RubyInline
+
+./do_bench.sh
+
+NOTE the use of inline makes for run time dependency on a compiler (not just install) time

@@ -1,7 +1,12 @@
 all: average
 
-averge: average.cpp
-	gcc -Wall -Wextra -O -ansi -pedantic -shared average.cpp -o average.so
+CPP_FLAGS=-Wno-ignored-attributes -Wall -stdlib=libstdc++ -O -Wc++11-extensions -arch i386 -arch x86_64
+
+average.o: average.cpp average.h
+	g++ $(CPP_FLAGS) -c average.cpp
+
+average: average.o
+	g++ $(CPP_FLAGS) -shared average_lib.cpp -o average_lib.so average.o
 
 clean:
-	rm -rf average.so
+	rm -rf *.so *.o
