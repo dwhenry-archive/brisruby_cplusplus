@@ -1,6 +1,6 @@
 all: average
 
-CPP_FLAGS=-Wno-ignored-attributes -Wall -stdlib=libstdc++ -O -Wc++11-extensions -arch i386 -arch x86_64
+CPP_FLAGS=-Wno-ignored-attributes -Wall -stdlib=libstdc++ -O -Wc++11-extensions -arch i386 -arch x86_64 -std=c++11
 
 average.o: average.cpp average.h
 	g++ $(CPP_FLAGS) -c average.cpp
