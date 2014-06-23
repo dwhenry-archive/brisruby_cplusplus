@@ -13,7 +13,8 @@ VALUE method_sum(VALUE self, VALUE x, VALUE y);
 // The initialization method for this module
 void Init_mytest() {
 	MyTest = rb_define_module("MyTest");
-	rb_define_method(MyTest, "sum",   method_sum,   2);
+  rb_define_singleton_method(MyTest, "sum", method_sum, 2);
+	//rb_define_method(MyTest, "sum",   method_sum,   2);
 }
 
 VALUE method_sum(VALUE self, VALUE x, VALUE y) {
